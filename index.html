@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .grid-wrapper {
+        position: absolute;
+        width: 580px;
+        height: 580px;
+      }
+      
+      svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .grid-cell {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #333;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0;
+      }
+
+      .grid-cell.selected {
+        background-color: #99d199;
+      }
+
+      .direction-button {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: #666;
+        border: none;
+        border-radius: 50%;
+        padding: 0;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .direction-button:hover {
+        background-color: #333;
+      }
+
+      .direction-button.active {
+        background-color: #4CAF50;
+      }
+
+      .top-button { top: -6px; left: 50%; transform: translateX(-50%); }
+      .bottom-button { bottom: -6px; left: 50%; transform: translateX(-50%); }
+      .left-button { left: -6px; top: 50%; transform: translateY(-50%); }
+      .right-button { right: -6px; top: 45%; transform: translateX(-50%); }
+
+      /* Grid positions */
+      .grid-cell { position: absolute;}
+      .grid-cell:nth-child(1) { transform: translate(0px, 0px); }
+      .grid-cell:nth-child(2) { transform: translate(120px, 0px); }
+      .grid-cell:nth-child(3) { transform: translate(240px, 0px); }
+      .grid-cell:nth-child(4) { transform: translate(360px, 0px); }
+      .grid-cell:nth-child(5) { transform: translate(480px, 0px); }
+      .grid-cell:nth-child(6) { transform: translate(0px, 120px); }
+      .grid-cell:nth-child(7) { transform: translate(120px, 120px); }
+      .grid-cell:nth-child(8) { transform: translate(240px, 120px); }
+      .grid-cell:nth-child(9) { transform: translate(360px, 120px); }
+      .grid-cell:nth-child(10) { transform: translate(480px, 120px); }
+      .grid-cell:nth-child(11) { transform: translate(0px, 240px); }
+      .grid-cell:nth-child(12) { transform: translate(120px, 240px); }
+      .grid-cell:nth-child(13) { transform: translate(240px, 240px); }
+      .grid-cell:nth-child(14) { transform: translate(360px, 240px); }
+      .grid-cell:nth-child(15) { transform: translate(480px, 240px); }
+      .grid-cell:nth-child(16) { transform: translate(0px, 360px); }
+      .grid-cell:nth-child(17) { transform: translate(120px, 360px); }
+      .grid-cell:nth-child(18) { transform: translate(240px, 360px); }
+      .grid-cell:nth-child(19) { transform: translate(360px, 360px); }
+      .grid-cell:nth-child(20) { transform: translate(480px, 360px); }
+      .grid-cell:nth-child(21) { transform: translate(0px, 480px); }
+      .grid-cell:nth-child(22) { transform: translate(120px, 480px); }
+      .grid-cell:nth-child(23) { transform: translate(240px, 480px); }
+      .grid-cell:nth-child(24) { transform: translate(360px, 480px); }
+      .grid-cell:nth-child(25) { transform: translate(480px, 480px); }
+
+      .matrix-grid-container {
+        display: grid;
+      }
+      .matrix-grid-container .cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+      }
+    .matrix-grid-container .row {
+      display: flex;
+    }
+    </style>
+    <script type="module" crossorigin src="/assets/index-B5qDXfOF.js"></script>
+  </head>
+  <body>
+    <div class="matrix-grid-container">
+    </div>
+    <div class="container">
+     
+      <div class="grid-wrapper" id="grid"></div>
+      <svg  id="svg"></svg>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="clearPaths()">Clear All Paths</button>
+  
+    </div>
+
+  </body>
+</html>
